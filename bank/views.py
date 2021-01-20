@@ -9,21 +9,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from .models import Branches, Banks
 from .serializers import BranchesSerializer, BanksSerializer
 
-
-# Listing all the data from Branches.
-# @api_view(['GET', ])
-# def branch_list(request):
-#     try:
-#         branches = Branches.objects.all()
-#     except Branches.DoesNotExist:
-#         return HttpResponse(status=404)
-#     # Check for request method
-#     if request.method == 'GET':
-#         # Pass model to serializer
-#         serializer = BranchesSerializer(branches, many=True)
-#         return JsonResponse(serializer.data, safe= False)
-#     else:
-#         return HttpResponse("<h1>Nothing here</h1>")
+# No error handeling for simplicity
 
 class BranchList(ListAPIView):
     queryset = Branches.objects.all()
